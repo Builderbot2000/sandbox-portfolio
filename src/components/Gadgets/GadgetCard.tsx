@@ -6,6 +6,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+
 import DisabledGadgetOverlay from "./DisabledGadgetOverlay";
 
 const GadgetCard = ({

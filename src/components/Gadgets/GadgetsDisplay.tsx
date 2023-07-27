@@ -1,7 +1,7 @@
+import { RefObject } from "react";
 import { Grid } from "@mui/material";
 
 import GadgetCard from "./GadgetCard";
-import { RefObject } from "react";
 
 const GadgetsDisplay = ({
   anchorRef,
