@@ -1,5 +1,4 @@
-import { useCallback } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useCallback, useRef } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -7,6 +6,8 @@ import { loadFull } from "tsparticles";
 
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import particlesConfig from "./configs/particles-config";
+import GadgetsDisplay from "./components/Gadgets/GadgetsDisplay";
+import AboutDisplay from "./components/About/AboutDisplay";
 
 const App = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -27,6 +28,9 @@ const App = () => {
     []
   );
 
+  const aboutRef = useRef(null);
+  const gadgetsRef = useRef(null);
+
   return (
     <>
       <Particles
@@ -35,14 +39,10 @@ const App = () => {
         loaded={particlesLoaded}
         options={particlesConfig}
       />
-      <Router>
-        <ResponsiveAppBar />
-        <Routes>
-          <Route path="/" element={<div>discover</div>} />
-          <Route path="/gadgets" element={<div>gadgets</div>} />
-          <Route path="/about" element={<div>about</div>} />
-        </Routes>
-      </Router>
+
+      <ResponsiveAppBar refs={[gadgetsRef, aboutRef]} />
+      <AboutDisplay anchorRef={aboutRef} />
+      <GadgetsDisplay anchorRef={gadgetsRef} />
     </>
   );
 };
