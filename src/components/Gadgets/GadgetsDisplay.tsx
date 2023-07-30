@@ -22,7 +22,9 @@ const GadgetsDisplay = ({
             title="job filter"
             description="Web scraper that filters down postings from job boards based on user set parameters"
             link="http://www.google.com"
+            githubLink="https://github.com/Builderbot2000/job-scraper"
             imagePath="/static/images/job-boards.png"
+            threshold={300}
           />
         </Grid>
         <Grid item>
@@ -32,10 +34,11 @@ const GadgetsDisplay = ({
             link="http://www.google.com"
             imagePath="/static/images/tutoriala.jpg"
             disabled
+            threshold={600}
           />
         </Grid>
         <Grid item>
-          <GadgetCard blank />
+          <GadgetCard blank threshold={900} />
         </Grid>
       </Grid>
     </div>

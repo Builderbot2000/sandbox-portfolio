@@ -1,14 +1,15 @@
+import { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Box, Grid, IconButton } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { useState } from "react";
+
+import { members } from "../../utils/data";
 
 const MemberAbout = () => {
   const navigate = useNavigate();
 
   const [current, setCurrent] = useState("template");
-  const members = ["template", "kevin"];
 
   const handleBackward = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();

@@ -1,7 +1,7 @@
 import { Avatar, Box, Fade, Grid, Link, Typography } from "@mui/material";
 import StackIcon from "./StackIcon";
 
-const TemplateInfoDisplay = () => {
+const BuildersInfoDisplay = () => {
   return (
     <div>
       <Fade in mountOnEnter unmountOnExit timeout={1000}>
@@ -22,7 +22,7 @@ const TemplateInfoDisplay = () => {
               >
                 <Grid item>
                   <Avatar
-                    alt="John Doe"
+                    alt="Adam Smith"
                     src="/static/images/adventure-avatar.jpg"
                     sx={{
                       width: 120,
@@ -64,7 +64,7 @@ const TemplateInfoDisplay = () => {
                           justifyContent: "center",
                         }}
                       >
-                        John Doe
+                        Adam Smith
                       </Typography>
                     </Grid>
                     <Grid item>
@@ -83,7 +83,7 @@ const TemplateInfoDisplay = () => {
                           wordWrap: "break-word",
                         }}
                       >
-                        Frontend Developer at Generic Inc.
+                        Freelancer
                       </Typography>
                     </Grid>
                   </Grid>
@@ -128,7 +128,7 @@ const TemplateInfoDisplay = () => {
                       alignItems: "center",
                     }}
                   >
-                    "I make websites look good."
+                    "Hello World!"
                   </Typography>
                 </Grid>
                 <Grid item>
@@ -264,4 +264,4 @@ const TemplateInfoDisplay = () => {
   );
 };
 
-export default TemplateInfoDisplay;
+export default BuildersInfoDisplay;
