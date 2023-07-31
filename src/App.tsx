@@ -15,9 +15,6 @@ import {
   ThemeProvider,
 } from "@mui/material/styles";
 
-let theme = createTheme();
-theme = responsiveFontSizes(theme);
-
 const App = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
     // console.log(engine);
@@ -39,6 +36,9 @@ const App = () => {
 
   const aboutRef = useRef(null);
   const gadgetsRef = useRef(null);
+
+  let theme = createTheme();
+  theme = responsiveFontSizes(theme);
 
   return (
     <>

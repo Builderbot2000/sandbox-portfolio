@@ -6,6 +6,7 @@ import {
   Typography,
   Container,
   Button,
+  Grid,
 } from "@mui/material";
 import ForestIcon from "@mui/icons-material/Forest";
 
@@ -24,72 +25,99 @@ function ResponsiveAppBar({
         borderColor: "white",
       }}
     >
-      <AppBar position="sticky" elevation={0} sx={{ background: "#05472A" }}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <ForestIcon sx={{ fontSize: "400%" }} />
+      <AppBar
+        position="sticky"
+        elevation={0}
+        sx={{
+          background: "#05472A",
+          border: 0,
+          borderColor: "red",
+        }}
+      >
+        <Container maxWidth="xl" sx={{ border: 0, borderColor: "blue" }}>
+          <Toolbar disableGutters sx={{ border: 0, borderColor: "blue" }}>
+            <ForestIcon fontSize="large" />
             <Typography
               variant="h6"
-              noWrap
               component="a"
               sx={{
                 ml: 5,
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                width: "fit-content",
+                display: "flex",
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
+                textTransform: "uppercase",
+                border: 0,
+                borderColor: "brown",
               }}
             >
-              <pre style={{ fontFamily: "inherit" }}>
-                <div>PROJECT</div>
-                <div>EVERGREEN</div>
-              </pre>
+              Project Evergreen
             </Typography>
-
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              <Button
-                sx={{ ml: 5, my: 2, color: "white", display: "block" }}
-                onClick={() => refs[0].current?.scrollIntoView()}
-              >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    display: { xs: "none", md: "flex" },
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".3rem",
-                    color: "white",
-                    textDecoration: "none",
-                    wordWrap: "break-word",
-                  }}
+            <Grid
+              container
+              direction="row"
+              justifyContent="flex-end"
+              sx={{
+                flexGrow: 1,
+                border: 0,
+                borderColor: "white",
+              }}
+            >
+              <Grid item>
+                <Button
+                  sx={{ color: "white", display: "block" }}
+                  onClick={() =>
+                    refs[0].current?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    })
+                  }
                 >
-                  {" "}
-                  Gadgets{" "}
-                </Typography>
-              </Button>
-              <Button
-                sx={{ ml: 5, my: 2, color: "white", display: "block" }}
-                onClick={() => refs[1].current?.scrollIntoView()}
-              >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    display: { xs: "none", md: "flex" },
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".3rem",
-                    color: "white",
-                    textDecoration: "none",
-                    wordWrap: "break-word",
-                  }}
+                  <Typography
+                    sx={{
+                      display: "flex",
+                      fontFamily: "monospace",
+                      fontWeight: 700,
+                      letterSpacing: ".3rem",
+                      color: "white",
+                      textDecoration: "none",
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    Gadgets
+                  </Typography>
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button
+                  sx={{ color: "white", display: "block" }}
+                  onClick={() =>
+                    refs[1].current?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    })
+                  }
                 >
-                  About
-                </Typography>
-              </Button>
-            </Box>
+                  <Typography
+                    sx={{
+                      display: "flex",
+                      fontFamily: "monospace",
+                      fontWeight: 700,
+                      letterSpacing: ".3rem",
+                      color: "white",
+                      textDecoration: "none",
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    About
+                  </Typography>
+                </Button>
+              </Grid>
+            </Grid>
           </Toolbar>
         </Container>
       </AppBar>
@@ -97,8 +125,9 @@ function ResponsiveAppBar({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100%"
-          height="50"
+          height="100%"
           preserveAspectRatio="none"
+          viewBox="0 0 1600 50"
         >
           <path
             d="M 0 0 
