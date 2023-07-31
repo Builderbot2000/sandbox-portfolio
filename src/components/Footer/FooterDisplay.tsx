@@ -1,5 +1,5 @@
 import { Box, Grow, Typography, useScrollTrigger } from "@mui/material";
-import { version } from "../../utils/data";
+import { version } from "../../configs/data-config";
 
 const FooterDisplay = ({ threshold }: { threshold: number }) => {
   const trigger = useScrollTrigger({ threshold: threshold });

@@ -15,7 +15,7 @@ const AboutDisplay = ({
       <video
         src={backgroundVideo}
         height={800}
-        width={1600}
+        width="100%"
         autoPlay
         loop
         muted

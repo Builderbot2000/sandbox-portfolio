@@ -54,136 +54,155 @@ const GadgetCard = ({
 
   if (blank)
     return (
-      <Slide direction="left" in={trigger} timeout={1000}>
-        <Card
-          className="gadget-card"
-          sx={{
-            position: "relative",
-            borderRadius: 0,
-            maxWidth: 1000,
-            transition: "transform 0.15s ease-in-out",
-            "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
-          }}
-        >
-          <Box sx={{ width: 1000, height: 300 }}>
-            <Grid container>
+      <Box
+        width={window.innerWidth > 1000 ? "60vw" : "80vw"}
+        sx={{
+          aspectRatio: "24/9",
+        }}
+      >
+        <Slide direction="right" in={trigger} timeout={1000}>
+          <Card
+            className="gadget-card"
+            sx={{
+              position: "relative",
+              borderRadius: 0,
+              width: 1,
+              height: 1,
+              transition: "transform 0.15s ease-in-out",
+              "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+            }}
+          >
+            <Grid container sx={{ height: 1 }}>
               <Grid item xs={6}></Grid>
               {disabled ? <DisabledGadgetOverlay /> : null}
               <Grid item xs={6}>
                 <CardContent
-                  sx={{ backgroundColor: "silver", height: 300 }}
+                  sx={{ backgroundColor: "silver", height: 1 }}
                 ></CardContent>
               </Grid>
             </Grid>
-          </Box>
-        </Card>
-      </Slide>
+          </Card>
+        </Slide>
+      </Box>
     );
 
   return (
-    <Slide direction="left" in={trigger} timeout={1000}>
-      <Card
-        className="gadget-card"
-        sx={{
-          position: "relative",
-          borderRadius: 0,
-          maxWidth: 1000,
-          transition: "transform 0.15s ease-in-out",
-          "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
-        }}
-      >
-        <Grid container>
-          <Grid item xs={6}>
-            <CardMedia
-              component="img"
-              height="300"
-              image={imagePath}
-              alt="N/A"
-            />
-          </Grid>
-          {disabled ? <DisabledGadgetOverlay /> : null}
-          <Grid item xs={6}>
-            <CardContent sx={{ backgroundColor: "silver", height: 1 }}>
+    <Box
+      width={window.innerWidth > 1000 ? "60vw" : "80vw"}
+      sx={{
+        aspectRatio: "24/9",
+      }}
+    >
+      <Slide direction="right" in={trigger} timeout={1000}>
+        <Card
+          className="gadget-card"
+          sx={{
+            height: 1,
+            maxWidth: 1,
+            position: "relative",
+            borderRadius: 0,
+            transition: "transform 0.15s ease-in-out",
+            "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+            border: 0,
+            borderColor: "yellow",
+          }}
+        >
+          <Grid
+            container
+            direction="row"
+            sx={{ width: 1, height: 1, border: 0, borderColor: "green" }}
+          >
+            <Grid item xs={6} sx={{ border: 0, borderColor: "blue" }}>
+              <CardMedia
+                component="img"
+                image={imagePath}
+                alt="N/A"
+                sx={{ width: 1, height: 1 }}
+              />
+            </Grid>
+            {disabled ? <DisabledGadgetOverlay /> : null}
+            <Grid
+              item
+              container
+              direction="column"
+              justifyContent="space-evenly"
+              xs={6}
+              sx={{
+                border: 0,
+                borderColor: "green",
+                height: 1,
+                width: 1,
+                px: "5%",
+                backgroundColor: "silver",
+              }}
+            >
+              <Grid item sx={{ border: 0 }}>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    display: { md: "flex" },
+                    fontFamily: "monospace",
+                    fontWeight: 700,
+                    letterSpacing: ".3rem",
+                    color: "white",
+                    textDecoration: "none",
+                    textTransform: "uppercase",
+                    wordWrap: "break-word",
+                    justifyContent: "center",
+                  }}
+                >
+                  {title}
+                </Typography>
+              </Grid>
+              <Grid item sx={{ border: 0 }}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    display: { md: "flex" },
+                    fontFamily: "monospace",
+                    fontWeight: 700,
+                    letterSpacing: ".1rem",
+                    color: "black",
+                    textDecoration: "none",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  {description}
+                </Typography>
+              </Grid>
               <Grid
+                item
                 container
-                direction="column"
+                direction="row"
                 justifyContent="space-between"
-                sx={{ height: 0.9 }}
+                alignContent="flex-end"
+                sx={{ border: 0 }}
               >
                 <Grid item>
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      mb: 2,
-                      display: { xs: "none", md: "flex" },
-                      fontFamily: "monospace",
-                      fontWeight: 700,
-                      letterSpacing: ".3rem",
-                      color: "white",
-                      textDecoration: "none",
-                      textTransform: "uppercase",
-                      wordWrap: "break-word",
-                      justifyContent: "center",
-                    }}
+                  <IconButton
+                    className="github-button"
+                    onClick={handleGithubClick}
                   >
-                    {title}
-                  </Typography>
+                    <GitHubIcon fontSize="large" />
+                  </IconButton>
+                  <b>
+                    <i>Github</i>
+                  </b>
                 </Grid>
                 <Grid item>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      ml: 2,
-                      mb: 2,
-                      display: { xs: "none", md: "flex" },
-                      fontFamily: "monospace",
-                      fontWeight: 700,
-                      letterSpacing: ".1rem",
-                      color: "black",
-                      textDecoration: "none",
-                      wordWrap: "break-word",
-                    }}
-                  >
-                    {description}
-                  </Typography>
-                </Grid>
-                <Grid
-                  item
-                  container
-                  direction="row"
-                  justifyContent="space-between"
-                  alignContent="flex-end"
-                  sx={{ border: 0 }}
-                >
-                  <Grid item>
-                    <IconButton
-                      className="github-button"
-                      onClick={handleGithubClick}
-                    >
-                      <GitHubIcon sx={{ fontSize: 70 }} />
-                    </IconButton>
-                    <b>
-                      <i>Github</i>
-                    </b>
-                  </Grid>
-                  <Grid item>
-                    <b>
-                      <i>Demo</i>
-                    </b>
-                    <IconButton
-                      className="play-button"
-                      onClick={handlePlayClick}
-                    >
-                      <PlayCircleOutlineIcon sx={{ fontSize: 70 }} />
-                    </IconButton>
-                  </Grid>
+                  <b>
+                    <i>Demo</i>
+                  </b>
+                  <IconButton className="play-button" onClick={handlePlayClick}>
+                    <PlayCircleOutlineIcon fontSize="large" />
+                  </IconButton>
                 </Grid>
               </Grid>
-            </CardContent>
+            </Grid>
           </Grid>
-        </Grid>
-      </Card>
-    </Slide>
+        </Card>
+      </Slide>
+    </Box>
   );
 };
 

@@ -4,7 +4,7 @@ import { Box, Grid, IconButton } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-import { members } from "../../utils/data";
+import { members } from "../../configs/data-config";
 
 const MemberAbout = () => {
   const navigate = useNavigate();

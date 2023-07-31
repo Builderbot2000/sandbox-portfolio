@@ -1,4 +1,4 @@
-import { useCallback, useRef, useEffect } from "react";
+import { useCallback, useRef } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -9,6 +9,14 @@ import particlesConfig from "./configs/particles-config";
 import GadgetsDisplay from "./components/Gadgets/GadgetsDisplay";
 import AboutDisplay from "./components/About/AboutDisplay";
 import FooterDisplay from "./components/Footer/FooterDisplay";
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@mui/material/styles";
+
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
 
 const App = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -40,11 +48,12 @@ const App = () => {
         loaded={particlesLoaded}
         options={particlesConfig}
       />
-
-      <ResponsiveAppBar refs={[gadgetsRef, aboutRef]} />
-      <AboutDisplay anchorRef={aboutRef} />
-      <GadgetsDisplay anchorRef={gadgetsRef} />
-      <FooterDisplay threshold={1000} />
+      <ThemeProvider theme={theme}>
+        <ResponsiveAppBar refs={[gadgetsRef, aboutRef]} />
+        <AboutDisplay anchorRef={aboutRef} />
+        <GadgetsDisplay anchorRef={gadgetsRef} />
+        <FooterDisplay threshold={1000} />
+      </ThemeProvider>
     </>
   );
 };
