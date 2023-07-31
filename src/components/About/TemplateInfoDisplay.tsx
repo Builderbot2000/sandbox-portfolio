@@ -53,7 +53,7 @@ const TemplateInfoDisplay = () => {
                         variant="h5"
                         sx={{
                           my: 2,
-                          display: { xs: "none", md: "flex" },
+                          display: "flex",
                           fontFamily: "monospace",
                           fontWeight: 700,
                           letterSpacing: ".3rem",
@@ -74,7 +74,7 @@ const TemplateInfoDisplay = () => {
                           ml: 2,
                           mb: 2,
                           width: 200,
-                          display: { xs: "none", md: "flex" },
+                          display: "flex",
                           fontFamily: "monospace",
                           fontWeight: 700,
                           letterSpacing: ".1rem",
@@ -137,7 +137,7 @@ const TemplateInfoDisplay = () => {
                     href="mailto: johndoe1337@outlook.com"
                     underline="hover"
                     sx={{
-                      display: { xs: "none", md: "flex" },
+                      display: "flex",
                       fontFamily: "monospace",
                       fontWeight: 700,
                       letterSpacing: ".1rem",
@@ -169,7 +169,7 @@ const TemplateInfoDisplay = () => {
                 variant="h5"
                 sx={{
                   my: 2,
-                  display: { xs: "none", md: "flex" },
+                  display: "flex",
                   fontFamily: "monospace",
                   fontWeight: 700,
                   letterSpacing: ".3rem",

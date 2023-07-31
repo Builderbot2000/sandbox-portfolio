@@ -14,7 +14,15 @@ const AboutDisplay = ({
     <div ref={anchorRef}>
       <Box
         width="100vw"
-        sx={{ aspectRatio: "16/9", border: 0, borderColor: "white" }}
+        sx={{
+          position: "absolute",
+          aspectRatio: "16/9",
+          top: 0,
+          left: 0,
+          border: 0,
+          borderColor: "purple",
+          zIndex: 2,
+        }}
       >
         <video
           src={backgroundVideo}
@@ -23,23 +31,48 @@ const AboutDisplay = ({
           autoPlay
           loop
           muted
-          style={{ display: "block", objectFit: "cover" }}
+          style={{
+            display: "block",
+            objectFit: "cover",
+            zIndex: 2,
+          }}
         />
+      </Box>
+      <Box
+        width="100vw"
+        sx={{
+          border: 0,
+          borderColor: "yellow",
+          background: "#254952",
+          zIndex: 1,
+        }}
+      >
         <Grid
           container
           direction="row"
           sx={{
-            height: 800,
+            width: 1,
+            height: "inherit",
             backgroundColor: "#00000008",
-            position: "absolute",
-            top: 0,
-            left: 0,
+            zIndex: 1000,
+            border: 0,
+            borderColor: "red",
           }}
         >
-          <Grid item xs={4} sx={{ border: 0, borderColor: "white" }}>
+          <Grid
+            item
+            md={4}
+            xs={12}
+            sx={{ zIndex: "inherit", border: 0, borderColor: "white" }}
+          >
             <TeamAbout />
           </Grid>
-          <Grid item xs={8} sx={{ border: 0, borderColor: "white" }}>
+          <Grid
+            item
+            md={8}
+            xs={12}
+            sx={{ zIndex: "inherit", border: 0, borderColor: "white" }}
+          >
             <MemberAbout />
           </Grid>
         </Grid>

@@ -2,22 +2,27 @@ import { Box, Paper, Typography } from "@mui/material";
 
 const TeamAbout = () => {
   return (
-    <Box sx={{ pt: 15 }}>
+    <Box
+      sx={{
+        pt: 10,
+        border: 0,
+        borderColor: "white",
+      }}
+    >
       <Paper
         elevation={6}
         sx={{
           m: 5,
-          p: 5,
+          p: 2,
           borderRadius: 5,
           backgroundColor: "silver",
-          minHeight: 400,
         }}
       >
         <Typography
           variant="h4"
           sx={{
             mb: 2,
-            display: { xs: "none", md: "flex" },
+            display: "flex",
             fontFamily: "monospace",
             fontWeight: 700,
             letterSpacing: ".3rem",
@@ -35,7 +40,7 @@ const TeamAbout = () => {
           sx={{
             ml: 2,
             mb: 2,
-            display: { xs: "none", md: "flex" },
+            display: "flex",
             fontFamily: "monospace",
             fontWeight: 700,
             letterSpacing: ".1rem",

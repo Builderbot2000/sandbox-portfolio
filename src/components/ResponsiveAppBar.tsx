@@ -20,7 +20,7 @@ function ResponsiveAppBar({
       sx={{
         position: "fixed",
         width: "100vw",
-        zIndex: 100,
+        zIndex: 1000000,
         border: 0,
         borderColor: "white",
       }}

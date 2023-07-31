@@ -32,12 +32,14 @@ const MemberAbout = () => {
   return (
     <Box
       sx={{
-        pt: 25,
+        pt: 15,
         px: 10,
         alignItems: "center",
         justifyContent: "center",
         display: "flex",
         flexDirection: "column",
+        border: 0,
+        borderColor: "blue",
       }}
     >
       <Grid
@@ -57,7 +59,9 @@ const MemberAbout = () => {
           }}
         >
           <IconButton onClick={handleBackward}>
-            <ArrowBackIosNewIcon sx={{ fontSize: "500%", color: "black" }} />
+            <ArrowBackIosNewIcon
+              sx={{ fontSize: { xs: "300%", md: "500%" }, color: "black" }}
+            />
           </IconButton>
         </Grid>
         <Grid
@@ -83,7 +87,9 @@ const MemberAbout = () => {
           }}
         >
           <IconButton onClick={handleForward}>
-            <ArrowForwardIosIcon sx={{ fontSize: "500%", color: "black" }} />
+            <ArrowForwardIosIcon
+              sx={{ fontSize: { xs: "300%", md: "500%" }, color: "black" }}
+            />
           </IconButton>
         </Grid>
       </Grid>

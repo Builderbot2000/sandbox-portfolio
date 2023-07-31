@@ -8,6 +8,12 @@ const GadgetsDisplay = ({
 }: {
   anchorRef: RefObject<HTMLDivElement>;
 }) => {
+  const thresholdStart = 300;
+  const thresholdStepSize = 300;
+  const calculateThreshold = (index: number) => {
+    return thresholdStart + index * thresholdStepSize;
+  };
+
   return (
     <div ref={anchorRef}>
       <Box sx={{ width: "100%", border: 0, borderColor: "white" }}>
@@ -19,7 +25,7 @@ const GadgetsDisplay = ({
               link="http://www.google.com"
               githubLink="https://github.com/Builderbot2000/job-scraper"
               imagePath="/static/images/job-boards.png"
-              threshold={300}
+              threshold={calculateThreshold(0)}
             />
           </Grid>
           <Grid item>
@@ -29,11 +35,11 @@ const GadgetsDisplay = ({
               link="http://www.google.com"
               imagePath="/static/images/tutoriala.jpg"
               disabled
-              threshold={600}
+              threshold={calculateThreshold(1)}
             />
           </Grid>
           <Grid item>
-            <GadgetCard blank threshold={900} />
+            <GadgetCard blank threshold={calculateThreshold(2)} />
           </Grid>
         </Grid>
       </Box>
