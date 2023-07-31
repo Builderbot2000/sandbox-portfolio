@@ -10,7 +10,7 @@ const GadgetsDisplay = ({
 }) => {
   return (
     <div ref={anchorRef}>
-      <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: "100%", border: 0, borderColor: "white" }}>
         <Grid container spacing={0} direction="column" alignItems="center">
           <Grid item>
             <GadgetCard

@@ -15,7 +15,15 @@ function ResponsiveAppBar({
   refs: Array<RefObject<HTMLDivElement>>;
 }) {
   return (
-    <Box sx={{ position: "fixed", width: 1, height: 150, zIndex: 100 }}>
+    <Box
+      sx={{
+        position: "fixed",
+        width: "100vw",
+        zIndex: 100,
+        border: 0,
+        borderColor: "white",
+      }}
+    >
       <AppBar position="sticky" elevation={0} sx={{ background: "#05472A" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>

@@ -58,6 +58,9 @@ const GadgetCard = ({
         width={window.innerWidth > 1000 ? "60vw" : "80vw"}
         sx={{
           aspectRatio: "24/9",
+          boxShadow: 3,
+          transition: "transform 0.15s ease-in-out",
+          "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
         }}
       >
         <Slide direction="right" in={trigger} timeout={1000}>
@@ -68,8 +71,6 @@ const GadgetCard = ({
               borderRadius: 0,
               width: 1,
               height: 1,
-              transition: "transform 0.15s ease-in-out",
-              "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
             }}
           >
             <Grid container sx={{ height: 1 }}>
@@ -91,6 +92,9 @@ const GadgetCard = ({
       width={window.innerWidth > 1000 ? "60vw" : "80vw"}
       sx={{
         aspectRatio: "24/9",
+        boxShadow: 3,
+        transition: "transform 0.15s ease-in-out",
+        "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
       }}
     >
       <Slide direction="right" in={trigger} timeout={1000}>
@@ -101,8 +105,6 @@ const GadgetCard = ({
             maxWidth: 1,
             position: "relative",
             borderRadius: 0,
-            transition: "transform 0.15s ease-in-out",
-            "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
             border: 0,
             borderColor: "yellow",
           }}
