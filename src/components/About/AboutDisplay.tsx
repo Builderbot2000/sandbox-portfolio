@@ -3,7 +3,7 @@ import { RefObject } from "react";
 
 import TeamAbout from "./TeamAbout";
 import MemberAbout from "./MemberAbout";
-import backgroundVideo from "../../../static/videos/mountain_aerial.mp4";
+import backgroundVideo from "../../../public/mountain_aerial.mp4";
 
 const AboutDisplay = ({
   anchorRef,

@@ -27,7 +27,7 @@ const App = () => {
 
   const particlesLoaded = useCallback(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async (container: Container | undefined) => {
+    async (_container: Container | undefined) => {
       // eslint-disable-next-line @typescript-eslint/await-thenable
       // await console.log(container);
     },

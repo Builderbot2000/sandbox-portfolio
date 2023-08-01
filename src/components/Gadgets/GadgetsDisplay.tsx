@@ -24,7 +24,7 @@ const GadgetsDisplay = ({
               description="Web scraper that filters down postings from job boards based on user set parameters"
               link="http://www.google.com"
               githubLink="https://github.com/Builderbot2000/job-scraper"
-              imagePath="/static/images/job-boards.png"
+              imagePath="/job-boards.png"
               threshold={calculateThreshold(0)}
             />
           </Grid>
@@ -33,7 +33,7 @@ const GadgetsDisplay = ({
               title="map master"
               description="Roleplay map management system that automatically handles player request for map changes"
               link="http://www.google.com"
-              imagePath="/static/images/tutoriala.jpg"
+              imagePath="/tutoriala.jpg"
               disabled
               threshold={calculateThreshold(1)}
             />

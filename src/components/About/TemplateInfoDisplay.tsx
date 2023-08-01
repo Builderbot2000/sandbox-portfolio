@@ -23,7 +23,7 @@ const TemplateInfoDisplay = () => {
                 <Grid item>
                   <Avatar
                     alt="John Doe"
-                    src="/static/images/adventure-avatar.jpg"
+                    src="/adventure-avatar.jpg"
                     sx={{
                       width: 120,
                       height: 120,
