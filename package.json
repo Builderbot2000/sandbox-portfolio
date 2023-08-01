@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://builderbot2000.github.io/sandbox-portfolio/",
+  "homepage": "https://builderbot2000.github.io/sandbox-portfolio",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
