@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path="/sandbox-portfolio/" element={<App />}>
           <Route path="" element={<TemplateInfoDisplay />} />
           <Route path="builder" element={<BuildersInfoDisplay />} />
           <Route path="template" element={<TemplateInfoDisplay />} />
