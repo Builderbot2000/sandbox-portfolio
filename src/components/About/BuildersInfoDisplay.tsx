@@ -23,7 +23,7 @@ const BuildersInfoDisplay = () => {
                 <Grid item>
                   <Avatar
                     alt="Adam Smith"
-                    src="/adventure-avatar.jpg"
+                    src="/sandbox-portfolio/adventure-avatar.jpg"
                     sx={{
                       width: 120,
                       height: 120,
