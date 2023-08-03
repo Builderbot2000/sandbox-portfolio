@@ -1,6 +1,6 @@
 import { Box, Paper, Typography } from "@mui/material";
 
-const TeamAbout = () => {
+const TeamAbout = ({ description }: { description: string }) => {
   return (
     <Box
       sx={{
@@ -36,7 +36,7 @@ const TeamAbout = () => {
           Team Evergreen
         </Typography>
         <Typography
-          variant="h6"
+          variant="body1"
           sx={{
             ml: 2,
             mb: 2,
@@ -49,7 +49,7 @@ const TeamAbout = () => {
             wordWrap: "break-word",
           }}
         >
-          We are a ...
+          {description}
         </Typography>
       </Paper>
     </Box>

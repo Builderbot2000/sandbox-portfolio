@@ -1,0 +1,18 @@
+          {memberProfiles.map((curr, i) => {
+            return (
+              <Route
+                key={i}
+                path={curr.entryPath}
+                element={
+                  <MemberInfoDisplay
+                    name={curr.name}
+                    avatarSrc={curr.avatarSrc}
+                    position={curr.position}
+                    quote={curr.quote}
+                    email={curr.email}
+                    stack={curr.stack}
+                  />
+                }
+              />
+            );
+          })}

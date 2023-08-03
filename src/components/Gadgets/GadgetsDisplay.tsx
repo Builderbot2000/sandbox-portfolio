@@ -2,6 +2,7 @@ import { RefObject } from "react";
 import { Box, Grid } from "@mui/material";
 
 import GadgetCard from "./GadgetCard";
+import { projectProfiles } from "../../configs/data-config";
 
 const GadgetsDisplay = ({
   anchorRef,
@@ -18,29 +19,27 @@ const GadgetsDisplay = ({
     <div ref={anchorRef}>
       <Box sx={{ width: "100%", border: 0, borderColor: "white" }}>
         <Grid container spacing={0} direction="column" alignItems="center">
-          <Grid item>
-            <GadgetCard
-              title="job filter"
-              description="Web scraper that filters down postings from job boards based on user set parameters"
-              link="http://www.google.com"
-              githubLink="https://github.com/Builderbot2000/job-scraper"
-              imagePath="/sandbox-portfolio/job-boards.png"
-              threshold={calculateThreshold(0)}
-            />
-          </Grid>
-          <Grid item>
-            <GadgetCard
-              title="map master"
-              description="Roleplay map management system that automatically handles player request for map changes"
-              link="http://www.google.com"
-              imagePath="/sandbox-portfolio/tutoriala.jpg"
-              disabled
-              threshold={calculateThreshold(1)}
-            />
-          </Grid>
-          <Grid item>
-            <GadgetCard blank threshold={calculateThreshold(2)} />
-          </Grid>
+          {projectProfiles.map((curr, i) => {
+            if (!curr)
+              return (
+                <Grid item key={i}>
+                  <GadgetCard blank threshold={calculateThreshold(i)} />
+                </Grid>
+              );
+            return (
+              <Grid item key={i}>
+                <GadgetCard
+                  name={curr.name}
+                  disabled={curr.disabled}
+                  description={curr.description}
+                  pictureSrc={curr.pictureSrc}
+                  githubLink={curr.githubLink}
+                  demoLink={curr.demoLink}
+                  threshold={calculateThreshold(i)}
+                />
+              </Grid>
+            );
+          })}
         </Grid>
       </Box>
     </div>

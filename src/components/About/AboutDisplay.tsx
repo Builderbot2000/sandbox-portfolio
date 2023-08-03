@@ -3,7 +3,7 @@ import { RefObject } from "react";
 
 import TeamAbout from "./TeamAbout";
 import MemberAbout from "./MemberAbout";
-import backgroundVideo from "../../../public/mountain_aerial.mp4";
+import { teamDescription } from "../../configs/data-config";
 
 const AboutDisplay = ({
   anchorRef,
@@ -25,7 +25,7 @@ const AboutDisplay = ({
         }}
       >
         <video
-          src={backgroundVideo}
+          src="/mountain_aerial.mp4"
           height="100%"
           width="100%"
           autoPlay
@@ -65,7 +65,7 @@ const AboutDisplay = ({
             xs={12}
             sx={{ zIndex: "inherit", border: 0, borderColor: "white" }}
           >
-            <TeamAbout />
+            <TeamAbout description={teamDescription} />
           </Grid>
           <Grid
             item

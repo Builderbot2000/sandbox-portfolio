@@ -13,26 +13,18 @@ import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 import DisabledGadgetOverlay from "./DisabledGadgetOverlay";
+import { GadgetProps } from "../../types/types";
 
 const GadgetCard = ({
-  title,
+  name,
   description,
-  link,
+  demoLink,
   githubLink,
-  imagePath,
+  pictureSrc,
   disabled = false,
   blank = false,
   threshold,
-}: {
-  title?: string;
-  description?: string;
-  link?: string;
-  githubLink?: string;
-  imagePath?: string;
-  disabled?: boolean;
-  blank?: boolean;
-  threshold: number;
-}) => {
+}: GadgetProps) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: threshold,
@@ -41,7 +33,7 @@ const GadgetCard = ({
   const handlePlayClick = (event: React.MouseEvent<HTMLElement>) => {
     if (!disabled && !blank) {
       event.preventDefault();
-      window.open(link);
+      window.open(demoLink);
     }
   };
 
@@ -117,7 +109,7 @@ const GadgetCard = ({
             <Grid item xs={6} sx={{ border: 0, borderColor: "blue" }}>
               <CardMedia
                 component="img"
-                image={imagePath}
+                image={pictureSrc}
                 alt="N/A"
                 sx={{ width: 1, height: 1 }}
               />
@@ -153,7 +145,7 @@ const GadgetCard = ({
                     justifyContent: "center",
                   }}
                 >
-                  {title}
+                  {name}
                 </Typography>
               </Grid>
               <Grid item sx={{ border: 0 }}>

@@ -1,10 +1,26 @@
-import { Avatar, Box, Fade, Grid, Link, Typography } from "@mui/material";
-import StackIcon from "./StackIcon";
+import { Avatar, Box, Grid, Link, Slide, Typography } from "@mui/material";
 
-const TemplateInfoDisplay = () => {
+import StackIcon from "./StackIcon";
+import { MemberProfile } from "../../types/types";
+
+const MemberInfoDisplay = ({
+  name,
+  avatarSrc,
+  position,
+  quote,
+  email,
+  stack,
+}: Omit<MemberProfile, "entryPath">) => {
   return (
     <div>
-      <Fade in mountOnEnter unmountOnExit timeout={1000}>
+      <Slide
+        appear
+        in
+        mountOnEnter
+        unmountOnExit
+        direction="down"
+        timeout={800}
+      >
         <Box sx={{ width: 500, height: 600 }}>
           <Grid
             container
@@ -23,7 +39,7 @@ const TemplateInfoDisplay = () => {
                 <Grid item>
                   <Avatar
                     alt="John Doe"
-                    src="/sandbox-portfolio/adventure-avatar.jpg"
+                    src={avatarSrc}
                     sx={{
                       width: 120,
                       height: 120,
@@ -64,7 +80,7 @@ const TemplateInfoDisplay = () => {
                           justifyContent: "center",
                         }}
                       >
-                        John Doe
+                        {name}
                       </Typography>
                     </Grid>
                     <Grid item>
@@ -83,7 +99,7 @@ const TemplateInfoDisplay = () => {
                           wordWrap: "break-word",
                         }}
                       >
-                        Frontend Developer at Generic Inc.
+                        {position}
                       </Typography>
                     </Grid>
                   </Grid>
@@ -128,13 +144,13 @@ const TemplateInfoDisplay = () => {
                       alignItems: "center",
                     }}
                   >
-                    "I make websites look good."
+                    {quote}
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography
                     component={Link}
-                    href="mailto: johndoe1337@outlook.com"
+                    href={`mailto: ${email}`}
                     underline="hover"
                     sx={{
                       display: "flex",
@@ -184,7 +200,7 @@ const TemplateInfoDisplay = () => {
               </Typography>
               <Grid
                 container
-                direction="column"
+                direction="row"
                 alignItems="center"
                 sx={{
                   width: 1,
@@ -198,70 +214,24 @@ const TemplateInfoDisplay = () => {
                   justifyContent="space-around"
                   sx={{ width: 1 }}
                 >
-                  <Grid item>
-                    <StackIcon
-                      iconSrc="skill-icons:javascript"
-                      iconName="Javascript"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <StackIcon iconSrc="logos:nodejs" iconName="NodeJS" />
-                  </Grid>
-                  <Grid item>
-                    <StackIcon
-                      iconSrc="skill-icons:react-dark"
-                      iconName="React"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <StackIcon iconSrc="skill-icons:redux" iconName="Redux" />
-                  </Grid>
-                  <Grid item>
-                    <StackIcon
-                      iconSrc="skill-icons:expressjs-dark"
-                      iconName="Express"
-                    />
-                  </Grid>
-                  <Grid
-                    item
-                    container
-                    justifyContent="space-around"
-                    spacing={2}
-                    direction="row"
-                  >
-                    <Grid item>
-                      <StackIcon
-                        iconSrc="skill-icons:typescript"
-                        iconName="Typescript"
-                      />
-                    </Grid>
-                    <Grid item>
-                      <StackIcon
-                        iconSrc="skill-icons:mongodb"
-                        iconName="MongoDB"
-                      />
-                    </Grid>
-                    <Grid item>
-                      <StackIcon
-                        iconSrc="skill-icons:materialui-dark"
-                        iconName="MaterialUI"
-                      />
-                    </Grid>
-                    <Grid item>
-                      <StackIcon iconSrc="skill-icons:html" iconName="HTML" />
-                    </Grid>
-                    <Grid item>
-                      <StackIcon iconSrc="skill-icons:css" iconName="CSS" />
-                    </Grid>
-                  </Grid>
+                  {stack.map((curr, i) => {
+                    return (
+                      <Grid item key={i}>
+                        <StackIcon
+                          iconName={curr.name}
+                          iconSrc={curr.iconSrc}
+                        />
+                      </Grid>
+                    );
+                  })}
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Box>
-      </Fade>
+      </Slide>
     </div>
   );
 };
 
-export default TemplateInfoDisplay;
+export default MemberInfoDisplay;
