@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 
+import App from "./App.tsx";
 import MemberInfoDisplay from "./components/About/MemberInfoDisplay.tsx";
 import OtherInfoDisplay from "./components/About/OtherInfoDisplay.tsx";
 import { memberProfiles } from "./configs/data-config.ts";
@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/sandbox-portfolio/" element={<App />}>
+        <Route path={import.meta.env.BASE_URL} element={<App />}>
           <Route
             path=""
             element={

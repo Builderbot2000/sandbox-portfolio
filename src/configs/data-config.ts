@@ -11,7 +11,7 @@ export const memberProfiles: Array<MemberProfile> = [
   {
     entryPath: "kevin",
     name: "Kevin Tang",
-    avatarSrc: "/sandbox-portfolio/adventure-avatar.jpg",
+    avatarSrc: "adventure-avatar.jpg",
     position: "Freelance Web Developer",
     quote: "Cloud solutions enthusiast",
     email: "kevintang1118@outlook.com",
@@ -31,7 +31,7 @@ export const memberProfiles: Array<MemberProfile> = [
   {
     entryPath: "david",
     name: "David Smith",
-    avatarSrc: "/sandbox-portfolio/webdev-avatar.png",
+    avatarSrc: "webdev-avatar.png",
     position: "Fullstack Developer at BC Cancer Agency",
     quote: "Loves seeing things click together",
     email: "dsmith@outlook.com",
@@ -53,7 +53,7 @@ export const projectProfiles: Array<ProjectProfile | null> = [
       "Web scraper that filters down postings from job boards based on user set parameters",
     demoLink: "http://www.google.com",
     githubLink: "https://github.com/Builderbot2000/job-scraper",
-    pictureSrc: "/sandbox-portfolio/job-boards.png",
+    pictureSrc: "job-boards.png",
   },
   {
     name: "map master",
@@ -61,7 +61,7 @@ export const projectProfiles: Array<ProjectProfile | null> = [
     description:
       "Roleplay map management system that automatically handles player request for map changes",
     demoLink: "http://www.google.com",
-    pictureSrc: "/sandbox-portfolio/tutoriala.jpg",
+    pictureSrc: "tutoriala.jpg",
   },
   null,
 ];

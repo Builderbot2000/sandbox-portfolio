@@ -39,7 +39,7 @@ const MemberInfoDisplay = ({
                 <Grid item>
                   <Avatar
                     alt="John Doe"
-                    src={avatarSrc}
+                    src={`${import.meta.env.BASE_URL}${avatarSrc}`}
                     sx={{
                       width: 120,
                       height: 120,
