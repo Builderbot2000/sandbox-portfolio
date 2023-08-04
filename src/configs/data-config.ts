@@ -5,7 +5,7 @@ export const version = 1.0;
 
 export const teamDescription =
   "We are a group of friends who share a common interest in making web applications, \
-  and here is where we pool our talents and ideas to make the big projects possible.";
+  and here is where we pool our talents and ideas to make our big projects possible.";
 
 export const memberProfiles: Array<MemberProfile> = [
   {

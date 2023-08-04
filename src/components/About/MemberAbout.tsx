@@ -34,7 +34,7 @@ const MemberAbout = () => {
   return (
     <Box
       sx={{
-        pt: 15,
+        pt: { sm: 0, md: 15 },
         px: 10,
         alignItems: "center",
         justifyContent: "center",
@@ -46,9 +46,9 @@ const MemberAbout = () => {
     >
       <Grid
         container
-        direction="row"
         justifyContent="center"
         alignItems="center"
+        sx={{ flexDirection: { xs: "column", md: "row" }, border: 0 }}
       >
         <Grid
           item
@@ -56,7 +56,7 @@ const MemberAbout = () => {
           sx={{
             alignItems: "center",
             justifyContent: "center",
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             flexDirection: "column",
           }}
         >
@@ -84,7 +84,7 @@ const MemberAbout = () => {
           sx={{
             alignItems: "center",
             justifyContent: "center",
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             flexDirection: "column",
           }}
         >
@@ -93,6 +93,28 @@ const MemberAbout = () => {
               sx={{ fontSize: { xs: "300%", md: "500%" }, color: "black" }}
             />
           </IconButton>
+        </Grid>
+        <Grid
+          item
+          container
+          direction="row"
+          justifyContent="space-evenly"
+          sx={{ display: { sx: "flex", md: "none" }, border: 0 }}
+        >
+          <Grid item>
+            <IconButton onClick={handleBackward}>
+              <ArrowBackIosNewIcon
+                sx={{ fontSize: { xs: "300%", md: "500%" }, color: "black" }}
+              />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton onClick={handleForward}>
+              <ArrowForwardIosIcon
+                sx={{ fontSize: { xs: "300%", md: "500%" }, color: "black" }}
+              />
+            </IconButton>
+          </Grid>
         </Grid>
       </Grid>
     </Box>

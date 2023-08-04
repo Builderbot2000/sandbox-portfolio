@@ -47,8 +47,8 @@ const GadgetCard = ({
   if (blank)
     return (
       <Box
-        width={window.innerWidth > 1000 ? "60vw" : "80vw"}
         sx={{
+          width: { xs: "100vw", sm: "80vw", md: "60vw" },
           aspectRatio: "24/9",
           boxShadow: 3,
           transition: "transform 0.15s ease-in-out",
@@ -81,8 +81,8 @@ const GadgetCard = ({
   if (pictureSrc)
     return (
       <Box
-        width={window.innerWidth > 1000 ? "60vw" : "80vw"}
         sx={{
+          width: { xs: "100vw", sm: "80vw", md: "60vw" },
           aspectRatio: "24/9",
           boxShadow: 3,
           transition: "transform 0.15s ease-in-out",

@@ -38,8 +38,9 @@ const App = () => {
   const gadgetsRef = useRef(null);
 
   let theme = createTheme();
+  console.log("before: ", theme.typography.body1.fontSize);
   theme = responsiveFontSizes(theme);
-  console.log(theme);
+  console.log("after: ", theme.typography.body1.fontSize);
 
   return (
     <>
