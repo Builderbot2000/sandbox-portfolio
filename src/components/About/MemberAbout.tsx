@@ -4,35 +4,37 @@ import { Box, Grid, IconButton } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-import { members } from "../../configs/data-config";
+import { memberProfiles } from "../../configs/data-config";
 
 const MemberAbout = () => {
   const navigate = useNavigate();
 
-  const [current, setCurrent] = useState("template");
+  const [current, setCurrent] = useState(memberProfiles[0].entryPath);
 
   const handleBackward = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    let prevMemberIndex = members.findIndex((name) => name === current) - 1;
-    if (prevMemberIndex < 0) prevMemberIndex = members.length - 1;
-    const prevMember = members[prevMemberIndex];
-    setCurrent(prevMember);
-    navigate(`/sandbox-portfolio/${prevMember}`);
+    let prevMemberIndex =
+      memberProfiles.findIndex((member) => member.entryPath === current) - 1;
+    if (prevMemberIndex < 0) prevMemberIndex = memberProfiles.length - 1;
+    const prevMember = memberProfiles[prevMemberIndex];
+    setCurrent(prevMember.entryPath);
+    navigate(`/sandbox-portfolio/${prevMember.entryPath}`);
   };
 
   const handleForward = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    let nextMemberIndex = members.findIndex((name) => name === current) + 1;
-    if (nextMemberIndex >= members.length) nextMemberIndex = 0;
-    const nextMember = members[nextMemberIndex];
-    setCurrent(nextMember);
-    navigate(`/sandbox-portfolio/${nextMember}`);
+    let nextMemberIndex =
+      memberProfiles.findIndex((member) => member.entryPath === current) + 1;
+    if (nextMemberIndex >= memberProfiles.length) nextMemberIndex = 0;
+    const nextMember = memberProfiles[nextMemberIndex];
+    setCurrent(nextMember.entryPath);
+    navigate(`/sandbox-portfolio/${nextMember.entryPath}`);
   };
 
   return (
     <Box
       sx={{
-        pt: 15,
+        pt: { sm: 0, md: 15 },
         px: 10,
         alignItems: "center",
         justifyContent: "center",
@@ -44,9 +46,9 @@ const MemberAbout = () => {
     >
       <Grid
         container
-        direction="row"
         justifyContent="center"
         alignItems="center"
+        sx={{ flexDirection: { xs: "column", md: "row" }, border: 0 }}
       >
         <Grid
           item
@@ -54,7 +56,7 @@ const MemberAbout = () => {
           sx={{
             alignItems: "center",
             justifyContent: "center",
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             flexDirection: "column",
           }}
         >
@@ -82,7 +84,7 @@ const MemberAbout = () => {
           sx={{
             alignItems: "center",
             justifyContent: "center",
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             flexDirection: "column",
           }}
         >
@@ -91,6 +93,28 @@ const MemberAbout = () => {
               sx={{ fontSize: { xs: "300%", md: "500%" }, color: "black" }}
             />
           </IconButton>
+        </Grid>
+        <Grid
+          item
+          container
+          direction="row"
+          justifyContent="space-evenly"
+          sx={{ display: { sx: "flex", md: "none" }, border: 0 }}
+        >
+          <Grid item>
+            <IconButton onClick={handleBackward}>
+              <ArrowBackIosNewIcon
+                sx={{ fontSize: { xs: "300%", md: "500%" }, color: "black" }}
+              />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton onClick={handleForward}>
+              <ArrowForwardIosIcon
+                sx={{ fontSize: { xs: "300%", md: "500%" }, color: "black" }}
+              />
+            </IconButton>
+          </Grid>
         </Grid>
       </Grid>
     </Box>

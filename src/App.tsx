@@ -8,7 +8,6 @@ import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import particlesConfig from "./configs/particles-config";
 import GadgetsDisplay from "./components/Gadgets/GadgetsDisplay";
 import AboutDisplay from "./components/About/AboutDisplay";
-import FooterDisplay from "./components/Footer/FooterDisplay";
 import {
   createTheme,
   responsiveFontSizes,
@@ -38,7 +37,9 @@ const App = () => {
   const gadgetsRef = useRef(null);
 
   let theme = createTheme();
+  // console.log("before: ", theme.typography.body1.fontSize);
   theme = responsiveFontSizes(theme);
+  // console.log("after: ", theme.typography.body1.fontSize);
 
   return (
     <>
@@ -52,7 +53,6 @@ const App = () => {
         <ResponsiveAppBar refs={[gadgetsRef, aboutRef]} />
         <AboutDisplay anchorRef={aboutRef} />
         <GadgetsDisplay anchorRef={gadgetsRef} />
-        <FooterDisplay threshold={1000} />
       </ThemeProvider>
     </>
   );

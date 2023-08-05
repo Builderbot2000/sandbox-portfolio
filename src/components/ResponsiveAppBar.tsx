@@ -127,7 +127,7 @@ function ResponsiveAppBar({
           width="100%"
           height="100%"
           preserveAspectRatio="none"
-          viewBox="0 0 1600 50"
+          viewBox="0 0 1600 100"
         >
           <path
             d="M 0 0 

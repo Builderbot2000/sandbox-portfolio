@@ -11,6 +11,7 @@ const StackIcon = ({
   return (
     <Card
       sx={{
+        m: 1,
         borderRadius: 0,
         boxShadow: 0,
         transition: "transform 0.15s ease-in-out",
@@ -19,12 +20,7 @@ const StackIcon = ({
       }}
     >
       <div>
-        <Icon
-          icon={iconSrc}
-          style={{
-            fontSize: "56px",
-          }}
-        />
+        <Icon icon={iconSrc} fontSize="56" />
       </div>
       <center>
         <div style={{ color: "white" }}>{iconName}</div>
