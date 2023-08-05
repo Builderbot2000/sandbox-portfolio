@@ -1,4 +1,4 @@
-import { RefObject, useRef } from "react";
+import { RefObject } from "react";
 import { Box, Grid } from "@mui/material";
 
 import GadgetCard from "./GadgetCard";
@@ -16,7 +16,7 @@ const GadgetsDisplay = ({
       : window.innerWidth / (16 / 9);
   const thresholdStepSize =
     window.innerWidth > 1000 ? 300 : window.innerWidth / (24 / 9);
-  console.log("start:", thresholdStart, " step:", thresholdStepSize);
+  // console.log("start:", thresholdStart, " step:", thresholdStepSize);
   const calculateThreshold = (index: number) => {
     return thresholdStart + index * thresholdStepSize;
   };
