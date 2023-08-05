@@ -25,7 +25,7 @@ const AboutDisplay = ({
         }}
       >
         <video
-          src="/mountain_aerial.mp4"
+          src={`${import.meta.env.BASE_URL}mountain_aerial.mp4`}
           height="100%"
           width="100%"
           autoPlay
