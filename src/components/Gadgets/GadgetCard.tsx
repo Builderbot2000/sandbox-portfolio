@@ -83,7 +83,7 @@ const GadgetCard = ({
       <Box
         sx={{
           width: { xs: "100vw", sm: "80vw", md: "60vw" },
-          aspectRatio: "24/9",
+          aspectRatio: { md: "24/9" },
           boxShadow: 3,
           transition: "transform 0.15s ease-in-out",
           "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },

@@ -1,16 +1,22 @@
-import { RefObject } from "react";
+import { RefObject, useRef } from "react";
 import { Box, Grid } from "@mui/material";
 
 import GadgetCard from "./GadgetCard";
 import { projectProfiles } from "../../configs/data-config";
+import FooterDisplay from "../Footer/FooterDisplay";
 
 const GadgetsDisplay = ({
   anchorRef,
 }: {
   anchorRef: RefObject<HTMLDivElement>;
 }) => {
-  const thresholdStart = 300;
-  const thresholdStepSize = 300;
+  const thresholdStart =
+    window.innerWidth > 1000
+      ? window.innerWidth / (16 / 9) / 2
+      : window.innerWidth / (16 / 9);
+  const thresholdStepSize =
+    window.innerWidth > 1000 ? 300 : window.innerWidth / (24 / 9);
+  console.log("start:", thresholdStart, " step:", thresholdStepSize);
   const calculateThreshold = (index: number) => {
     return thresholdStart + index * thresholdStepSize;
   };
@@ -42,6 +48,7 @@ const GadgetsDisplay = ({
           })}
         </Grid>
       </Box>
+      <FooterDisplay threshold={calculateThreshold(projectProfiles.length)} />
     </div>
   );
 };
