@@ -15,7 +15,7 @@ const GadgetsDisplay = ({
       ? window.innerWidth / (16 / 9) / 2
       : window.innerWidth / (16 / 9);
   const thresholdStepSize =
-    window.innerWidth > 1000 ? 300 : window.innerWidth / (24 / 9);
+    window.innerWidth > 1000 ? 200 : window.innerWidth / (24 / 9);
   // console.log("start:", thresholdStart, " step:", thresholdStepSize);
   const calculateThreshold = (index: number) => {
     return thresholdStart + index * thresholdStepSize;
