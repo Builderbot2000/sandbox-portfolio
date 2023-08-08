@@ -18,7 +18,7 @@ const MemberAbout = () => {
     if (prevMemberIndex < 0) prevMemberIndex = memberProfiles.length - 1;
     const prevMember = memberProfiles[prevMemberIndex];
     setCurrent(prevMember.entryPath);
-    navigate(`/sandbox-portfolio/${prevMember.entryPath}`);
+    navigate(`${prevMember.entryPath}`);
   };
 
   const handleForward = (event: React.MouseEvent<HTMLElement>) => {
@@ -28,7 +28,7 @@ const MemberAbout = () => {
     if (nextMemberIndex >= memberProfiles.length) nextMemberIndex = 0;
     const nextMember = memberProfiles[nextMemberIndex];
     setCurrent(nextMember.entryPath);
-    navigate(`/sandbox-portfolio/${nextMember.entryPath}`);
+    navigate(`${nextMember.entryPath}`);
   };
 
   return (
