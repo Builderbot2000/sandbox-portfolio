@@ -29,7 +29,6 @@ const MemberInfoDisplay = ({
             alignItems="center"
             sx={{
               width: { xs: "90vw", md: "40vw" },
-              aspectRatio: { md: "6/7" },
               border: 0,
             }}
           >
@@ -126,7 +125,6 @@ const MemberInfoDisplay = ({
                   mt: 2,
                   borderRadius: 3,
                   width: 1,
-                  height: 1,
                   backgroundColor: "white",
                   boxShadow: 3,
                   p: 1,
