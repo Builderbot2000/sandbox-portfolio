@@ -76,9 +76,17 @@ export const projectProfiles: Array<ProjectProfile | null> = [
     disabled: false,
     description:
       "Web scraper that filters down postings from job boards based on user set parameters",
-    demoLink: "http://www.google.com",
+    demoLink: "https://main.dpqf2rdccffs2.amplifyapp.com/",
     githubLink: "https://github.com/Builderbot2000/job-scraper",
     pictureSrc: "job-boards.png",
+  },
+  {
+    name: "TAI",
+    disabled: false,
+    description:
+      "Educational discussion board where ChatGPT is integrated to serve as the teaching assistant.",
+    demoLink: "https://tai-client-v2-svcawpadva-uw.a.run.app/",
+    pictureSrc: "teaching.png",
   },
   {
     name: "map master",
